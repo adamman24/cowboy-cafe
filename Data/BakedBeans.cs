@@ -5,33 +5,12 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// class representing chili cheese fries
+    /// class representing baked beans side
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class BakedBeans : Side
     {
         /// <summary>
-        /// calories for each size of cheese fries
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                switch(Size)
-                {
-                    case Size.Small:
-                        return 433;
-                    case Size.Medium:
-                        return 524;
-                    case Size.Large:
-                        return 610;
-                    default:
-                        throw new NotImplementedException();
-                }
-            }
-        }
-
-        /// <summary>
-        /// price for each size of cheese fries
+        /// prices for different size beans
         /// </summary>
         public override double Price
         {
@@ -40,11 +19,33 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 1.99;
+                        return 1.59;
                     case Size.Medium:
-                        return 2.99;
+                        return 1.79;
                     case Size.Large:
-                        return 3.99;
+                        return 1.99;
+                    default:
+                        throw new NotImplementedException();
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// calories for different size beans
+        /// </summary>
+        public override uint Calories
+        {
+            get
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return 312;
+                    case Size.Medium:
+                        return 378;
+                    case Size.Large:
+                        return 410;
                     default:
                         throw new NotImplementedException();
                 }

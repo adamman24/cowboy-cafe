@@ -7,12 +7,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// class representing pecos pulled pork entree
     /// </summary>
-    public class PecosPulledPork
+    public class PecosPulledPork: Entree
     {
         /// <summary>
         /// price of pulled pork is 5.88
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,7 +23,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// calories in pulled pork is 528
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -44,7 +44,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the pecos pulled pork
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

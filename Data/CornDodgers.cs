@@ -5,46 +5,47 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// class representing chili cheese fries
+    /// corndodgers class for all sizes
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class CornDodgers : Side
     {
         /// <summary>
-        /// calories for each size of cheese fries
+        /// prices for different sizes dodgers
         /// </summary>
-        public override uint Calories
+        public override double Price
         {
             get
             {
                 switch(Size)
                 {
                     case Size.Small:
-                        return 433;
+                        return 1.59;
                     case Size.Medium:
-                        return 524;
+                        return 1.79;
                     case Size.Large:
-                        return 610;
+                        return 1.99;
                     default:
                         throw new NotImplementedException();
                 }
+
             }
         }
 
         /// <summary>
-        /// price for each size of cheese fries
+        /// calories for different size of dodgers
         /// </summary>
-        public override double Price
+        public override uint Calories
         {
             get
             {
                 switch (Size)
                 {
                     case Size.Small:
-                        return 1.99;
+                        return 512;
                     case Size.Medium:
-                        return 2.99;
+                        return 685;
                     case Size.Large:
-                        return 3.99;
+                        return 717;
                     default:
                         throw new NotImplementedException();
                 }
