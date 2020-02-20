@@ -32,6 +32,17 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// what flavor the soda is
+        /// </summary>
+        public SodaFlavor Flavor;
+
+
+        /// <summary>
+        /// if has ice
+        /// </summary>
+        public bool Ice { get; set; } = true;
+
+        /// <summary>
         /// calories for different size drinks
         /// </summary>
         public override uint Calories

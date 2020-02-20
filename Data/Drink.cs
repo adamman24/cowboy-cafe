@@ -38,7 +38,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// public class for if theres ice or not
         /// </summary>
-        public bool Ice { get; } = true;
+        public bool Ice { get; set; } = false;
         
         /// <summary>
         /// abstract list for special instrutions 

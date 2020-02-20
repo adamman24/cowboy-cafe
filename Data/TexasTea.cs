@@ -38,16 +38,32 @@ namespace CowboyCafe.Data
         {
             get
             {
-                switch (Size)
+                if (Sweet)
                 {
-                    case Size.Small:
-                        return 10;
-                    case Size.Medium:
-                        return 22;
-                    case Size.Large:
-                        return 36;
-                    default:
-                        throw new NotImplementedException();
+                    switch (Size)
+                    {
+                        case Size.Small:
+                            return 10;
+                        case Size.Medium:
+                            return 22;
+                        case Size.Large:
+                            return 36;
+                        default:
+                            throw new NotImplementedException();
+                    }
+                }else
+                {
+                    switch (Size)
+                    {
+                        case Size.Small:
+                            return 5;
+                        case Size.Medium:
+                            return 11;
+                        case Size.Large:
+                            return 18;
+                        default:
+                            throw new NotImplementedException();
+                    }
                 }
             }
         }
@@ -56,6 +72,16 @@ namespace CowboyCafe.Data
         /// if lemon in tea
         /// </summary>
         public bool Lemon { get; set; } = false;
+
+        /// <summary>
+        /// if tea should be sweet
+        /// </summary>
+        public bool Sweet { get; set; } = true;
+
+        /// <summary>
+        /// if has ice
+        /// </summary>
+        public bool Ice { get; set; } = true;
 
         /// <summary>
         /// return list of special instructions

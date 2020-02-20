@@ -55,7 +55,15 @@ namespace CowboyCafe.Data
         /// <summary>
         /// holds if there is room for cream in coffee
         /// </summary>
-        public bool RoomForCream { get; set; } = true;
+        public bool RoomForCream { get; set; } = false;
+
+
+        /// <summary>
+        /// if the coffee should be decaf
+        /// </summary>
+        public bool Decaf { get; set; } = false;
+
+        
 
         /// <summary>
         /// return list of special instructions
@@ -66,7 +74,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
                 if (Ice) instructions.Add("Add Ice");
-                if (!RoomForCream) instructions.Add("Room for Cream");
+                if (RoomForCream) instructions.Add("Room for Cream");
                 return instructions;
 
             }
