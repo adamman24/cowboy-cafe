@@ -69,5 +69,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// returns Trial Burger when button clicked
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Trail Burger";
+        }
     }
 }

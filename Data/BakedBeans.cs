@@ -52,5 +52,13 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        /// <summary>
+        /// prints name of item in order list
+        /// </summary>
+        public override string ToString()
+        {
+            return $"{Size.ToString()} Baked Beans";
+        }
     }
 }

@@ -97,5 +97,20 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        /// <summary>
+        /// prints name of item in order list
+        /// </summary>
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                return $"{Size.ToString()} Texas Sweet Tea";
+            }else 
+            {
+               return $"{Size.ToString()} Texas Plain Tea";
+            }
+            
+        }
     }
 }

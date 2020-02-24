@@ -90,5 +90,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// returns Dakota double when button clicked
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dakota Double Burger";
+        }
     }
 }

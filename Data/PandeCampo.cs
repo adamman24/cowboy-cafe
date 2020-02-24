@@ -6,8 +6,10 @@ namespace CowboyCafe.Data
 {
     public class PanDeCampo : Side
     {
+        /// returns prices of pandecampo side
         public override double Price
         {
+            
             get
             {
                 switch (Size)
@@ -25,6 +27,7 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// calories for pan de campo
         public override uint Calories
         {
             get
@@ -42,6 +45,14 @@ namespace CowboyCafe.Data
                 }
 
             }
+        }
+
+        /// <summary>
+        /// prints name of item in order list
+        /// </summary>
+        public override string ToString()
+        {
+            return $"{Size.ToString()} Pan de Campo";
         }
     }
 }

@@ -79,5 +79,20 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        /// <summary>
+        /// prints name of item in order list
+        /// </summary>
+        public override string ToString()
+        {
+            if (Decaf)
+            {
+                return $"{Size.ToString()} Decaf Cowboy Coffee";
+            }else
+            {
+                return $"{Size.ToString()} Cowboy Coffee";
+            }
+            
+        }
     }
 }

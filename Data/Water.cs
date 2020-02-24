@@ -52,6 +52,8 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool Ice { get; set; } = true;
+
         public bool Lemon { get; set; } = false;
 
         /// <summary>
@@ -67,6 +69,14 @@ namespace CowboyCafe.Data
                 return instructions;
 
             }
+        }
+
+        /// <summary>
+        /// prints name of item in order list
+        /// </summary>
+        public override string ToString()
+        {
+            return $"{Size.ToString()} Water";
         }
     }
 }

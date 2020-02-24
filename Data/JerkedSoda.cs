@@ -77,5 +77,28 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        /// <summary>
+        /// prints name of item in order list
+        /// </summary>
+        public override string ToString()
+        {
+            if (Flavor == SodaFlavor.CreamSoda)
+            {
+                return $"{Size.ToString()} Cream Soda Jerked Soda";
+            }else if (Flavor == SodaFlavor.RootBeer)
+            {
+                return $"{Size.ToString()} Root Beer Jerked Soda";
+            }else if (Flavor == SodaFlavor.BirchBeer)
+            {
+                return $"{Size.ToString()} Birch Beer Jerked Soda";
+            }else if (Flavor == SodaFlavor.Sarsparilla)
+            {
+                return $"{Size.ToString()} Sarsparilla Jerked Soda";
+            }else
+            {
+                return $"{Size.ToString()} Orange Soda Jerked Soda";
+            }
+        }
     }
 }

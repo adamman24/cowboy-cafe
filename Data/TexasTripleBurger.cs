@@ -102,5 +102,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// returns Texas Triple Burger when button clicked
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
+        }
     }
 }
