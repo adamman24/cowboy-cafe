@@ -12,11 +12,11 @@ namespace CowboyCafe.Data
         /// <summary>
         /// price for item
         /// </summary>
-        double Price { get; set; }
+        double Price { get; }
 
         /// <summary>
         /// special instructions for item
         /// </summary>
-        List<string> SpecialInsructions { get; set; }
+        List<string> SpecialInsructions { get; }
     }
 }

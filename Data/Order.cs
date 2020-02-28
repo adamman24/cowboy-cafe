@@ -1,17 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class Order
+    public class Order: INotifyPropertyChanged
     {
-        public IEnumerable<IOrderItem> Items => throw new NotImplementedException();
+        private List<IOrderItem> items = new List<IOrderItem>();
+        public IEnumerable<IOrderItem> Items => items.ToArray();
 
-        public double Subtotal => 0;
+        public double Subtotal { get;  }
 
-        public void Add(IOrderItem item) { }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void Remove(IOrderItem item) { }
+        public void Add(IOrderItem item)
+        {
+            items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
+
+        public void Remove(IOrderItem item)
+        {
+            items.Remove(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+        }
     }
 }
