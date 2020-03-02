@@ -20,6 +20,11 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
         <StackPanel Grid.Row="1">
             <TextBlock TextAlignment="Center">Entree</TextBlock>
             <Button Name="AddTrailBurgerButton">Trail Burger</Button>
@@ -37,14 +42,14 @@
 
         
 
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1" Grid.Row="1">
             <TextBlock>Sides</TextBlock>
             <Button Name="AddChiliCheeseFriesButton">Chili Cheese Fries</Button>
             <Button Name="AddCornDodgersButton">Corn Dodgers</Button>
             <Button Name="AddPanDeCampoButton">Pan de Campo</Button>
             <Button Name="AddBakedBeansButton">Baked Beans</Button>
         </StackPanel>
-      <StackPanel Grid.Column ="2">
+      <StackPanel Grid.Column ="2" Grid.Row="1">
         <TextBlock>Drinks</TextBlock>
         <Button Name ="AddJerkedSodaButton">Jerked Soda</Button>
         <Button Name ="AddTexasTeaButton">Texas Tea</Button>
