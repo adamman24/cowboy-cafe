@@ -26,5 +26,6 @@ namespace CowboyCafe.PointOfSale
             InitializeComponent();
             this.DataContext = OrderList;
         }
+
     }
 }
