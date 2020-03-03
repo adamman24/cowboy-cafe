@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition/>
+            <RowDefinition Height="330"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
@@ -26,7 +26,7 @@
             <TextBlock TextAlignment="Left" FontSize="15">Order#</TextBlock>
             <TextBlock Text="{Binding Path=OrderNumber}" FontSize="15"></TextBlock>
         </StackPanel>
-        <ListBox Name="OrderListView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Path=Items}">
+        <ListBox Name="orderView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Path=Items}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -47,7 +47,7 @@
         </StackPanel>
         
         <StackPanel Grid.Row="2" Grid.Column="0" >
-            <TextBlock TextAlignment="Left" FontSize="20">Subtotal</TextBlock>
+            <Label FontSize="20">Subtotal</Label>
         </StackPanel>
         
     </Grid>

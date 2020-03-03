@@ -24,8 +24,7 @@ namespace CowboyCafe.PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            var order = new Order();
-            this.DataContext = order;
+            
         }
     }
 }

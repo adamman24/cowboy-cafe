@@ -19,12 +19,24 @@ namespace CowboyCafe.PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        public Order OrderList = new Order();
 
         public OrderControl()
         {
             InitializeComponent();
-            this.DataContext = OrderList;
+            var order = new Order();
+            this.DataContext = order;
+            CancelOrderButton.Click += onCancelOrderButtonClicked;
+            CompleteOrderButton.Click += onCompleteOrderButtonClicked;
+        }
+
+        void onCancelOrderButtonClicked(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
+        }
+
+        void onCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
         }
 
     }
