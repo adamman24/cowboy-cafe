@@ -19,7 +19,9 @@ namespace CowboyCafe.PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-
+        /// <summary>
+        /// interface for order control class
+        /// </summary>
         public OrderControl()
         {
             InitializeComponent();
@@ -29,11 +31,21 @@ namespace CowboyCafe.PointOfSale
             CompleteOrderButton.Click += onCompleteOrderButtonClicked;
         }
 
+        /// <summary>
+        /// when cancel order clicked incriment order number and clears
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void onCancelOrderButtonClicked(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
         }
 
+        /// <summary>
+        /// completes order and increments order number
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void onCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();

@@ -13,7 +13,7 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="180"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -32,9 +32,10 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="35"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{Binding}"/>
+                        <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -42,13 +43,11 @@
 
         </ListBox>
 
-            <StackPanel Grid.Row="2" Grid.Column="1">
+            <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock FontSize="20">Subtotal</TextBlock>
             <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}"/>
         </StackPanel>
         
-        <StackPanel Grid.Row="2" Grid.Column="0" >
-            <Label FontSize="20">Subtotal</Label>
-        </StackPanel>
         
     </Grid>
 </UserControl>
