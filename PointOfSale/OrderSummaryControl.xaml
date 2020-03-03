@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CowboyCafe.PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="400">
+             d:DesignHeight="450" d:DesignWidth="200">
     <UserControl.Resources>
         <Style TargetType="ListBoxItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -13,7 +13,7 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="325"/>
+            <ColumnDefinition Width="140"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -23,7 +23,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Grid.Column="0">
-            <TextBlock TextAlignment="Left" FontSize="30">Order</TextBlock>
+            <TextBlock TextAlignment="Left" FontSize="15">Order#</TextBlock>
+            <TextBlock Text="{Binding Path=OrderNumber}" FontSize="15"></TextBlock>
         </StackPanel>
         <ListBox Name="OrderListView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Path=Items}">
             <ListBox.ItemTemplate>
@@ -33,6 +34,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition Width="25"/>
                         </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding}"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -40,12 +42,12 @@
 
         </ListBox>
 
-            <StackPanel Grid.Row="1" Grid.Column="0">
-            <TextBox Text="{Binding Path=Subtotal, StringFormat=c}"/>
+            <StackPanel Grid.Row="2" Grid.Column="1">
+            <TextBlock Text="{Binding Path=Subtotal, StringFormat=c}"/>
         </StackPanel>
         
         <StackPanel Grid.Row="2" Grid.Column="0" >
-            <TextBlock TextAlignment="Left" FontSize="30">Subtotal</TextBlock>
+            <TextBlock TextAlignment="Left" FontSize="20">Subtotal</TextBlock>
         </StackPanel>
         
     </Grid>
