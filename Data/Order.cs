@@ -10,12 +10,12 @@ namespace CowboyCafe.Data
         private List<IOrderItem> items = new List<IOrderItem>();
         public IEnumerable<IOrderItem> Items => items.ToArray();
 
-        private uint number;
+        private static uint number = 0;
 
         public uint OrderNumber { get { return number++; } }
 
         private double subtotal = 0;
-        public double Subtotal { get { return subtotal; } set { subtotal = value; }  }
+        public double Subtotal { get { return subtotal; } private set { subtotal = value; }  }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
