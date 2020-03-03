@@ -19,6 +19,9 @@ namespace CowboyCafe.PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+        /// <summary>
+        /// creates new order list
+        /// </summary>
         public Order OrderList = new Order();
 
         public MenuItemSelectionControl()
