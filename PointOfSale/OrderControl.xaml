@@ -24,6 +24,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <Border x:Name="Container" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="300">
+            <local:MenuItemSelectionControl></local:MenuItemSelectionControl>
+        </Border>
+
         <StackPanel Grid.Row="0" Grid.Column="0">
             <Button Name="ItemSelectionButton" Height="40">Item Selection</Button>
         </StackPanel>
@@ -36,9 +40,7 @@
             <Button Name="CompleteOrderButton" Height="40">Complete Order</Button>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="300">
-            <local:MenuItemSelectionControl></local:MenuItemSelectionControl>
-        </StackPanel>
+        
 
         <StackPanel Grid.Column="3" Grid.RowSpan="450">
             <local:OrderSummaryControl></local:OrderSummaryControl>

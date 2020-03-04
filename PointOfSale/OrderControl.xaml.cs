@@ -31,6 +31,11 @@ namespace CowboyCafe.PointOfSale
             CompleteOrderButton.Click += onCompleteOrderButtonClicked;
         }
 
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element;
+        }
+
         /// <summary>
         /// when cancel order clicked incriment order number and clears
         /// </summary>
