@@ -27,7 +27,7 @@ namespace CowboyCafe.Extensions
 
             if(parent is T)
             {
-                return (T)parent;
+                return parent as T;
             }
 
             return FindAncestor<T>(parent);

@@ -25,10 +25,10 @@ namespace CowboyCafe.PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            var order = new Order();
-            this.DataContext = order;
+            DataContext = new Order();
             CancelOrderButton.Click += onCancelOrderButtonClicked;
             CompleteOrderButton.Click += onCompleteOrderButtonClicked;
+            ItemSelectionButton.Click += OnItemSelectionButtonClicked;
         }
 
         public void SwapScreen(UIElement element)
@@ -54,6 +54,11 @@ namespace CowboyCafe.PointOfSale
         void onCompleteOrderButtonClicked(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+        }
+
+        void OnItemSelectionButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Container.Child = new MenuItemSelectionControl();
         }
 
     }

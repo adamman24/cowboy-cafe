@@ -34,8 +34,13 @@
                             <ColumnDefinition/>
                             <ColumnDefinition Width="35"/>
                         </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
                         <TextBlock Text="{Binding}"/>
                         <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1"/>
+                        <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

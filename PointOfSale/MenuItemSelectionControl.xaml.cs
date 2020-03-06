@@ -20,7 +20,6 @@ namespace CowboyCafe.PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
-        private OrderControl orderControl;
 
         /// <summary>
         /// creates new order list
@@ -29,7 +28,7 @@ namespace CowboyCafe.PointOfSale
         {
             InitializeComponent();
 
-            //AddCowpokeChiliButton.Click += OnItemAddButtonClicked;
+            AddCowpokeChiliButton.Click += OnItemAddButtonClicked;
             AddAngryChickenButon.Click += OnItemAddButtonClicked;
             AddDakotaDoubleButton.Click += OnItemAddButtonClicked;
             AddRustlersRibsButton.Click += OnItemAddButtonClicked;
@@ -45,6 +44,31 @@ namespace CowboyCafe.PointOfSale
             AddJerkedSodaButton.Click += OnItemAddButtonClicked;
             AddBakedBeansButton.Click += OnItemAddButtonClicked;
         }
+        /// <summary>
+        /// adds item to list and open customization screen if it can
+        /// be customized
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="screen"></param>
+        void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        {
+            // need order to add item to
+            var order = DataContext as Order;
+            if (order == null) throw new Exception("DataContext expected to be an order instance");
+
+            //not all items are cusomizable
+            if (screen != null)
+            {
+                //need ordercontorl nacestor to load customization screen
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (orderControl == null) throw new Exception("An ancestor o ordercontrol expected");
+
+                //add item to customization screen and launch screen
+                screen.DataContext = item;
+                orderControl.SwapScreen(screen);
+            }
+            order.Add(item);
+        }
 
         /// <summary>
         /// whenver a button is clicked this will run switches for
@@ -55,20 +79,24 @@ namespace CowboyCafe.PointOfSale
         /// <param name="e"></param>
         public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
         {
-            orderControl = this.FindAncestor<OrderControl>();
-            if (DataContext is Order order)
+            var orderControl = this.FindAncestor<OrderControl>();
+            if(DataContext is Order order)
             {
                 if (sender is Button button)
                 {
-                    switch(button.Tag)
+                    switch (button.Tag)
                     {
                         case "CowpokeChili":
-                            var entree = new CowpokeChili();
-                            order.Add(entree);
+                            var item = new CowpokeChili();
                             var screen = new CustomizeCowpokeChili();
-                            screen.DataContext = entree;
-                            order.Add(entree);
-                            orderControl.SwapScreen(screen);
+                            AddItemAndOpenCustomizationScreen(item, screen);
+
+                            //var entree = new CowpokeChili();
+                            //order.Add(entree);
+                            //var screen = new CustomizeCowpokeChili();
+                            //screen.DataContext = entree;
+                            //order.Add(entree);
+                            //orderControl.SwapScreen(screen);
                             break;
                         case "AngryChicken":
                             order.Add(new AngryChicken());
