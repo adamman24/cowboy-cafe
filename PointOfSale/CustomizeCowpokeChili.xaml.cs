@@ -18,7 +18,7 @@ namespace CowboyCafe.PointOfSale
     /// </summary>
     public partial class CustomizeCowpokeChili : UserControl
     {
-        public CustomizeCowpokeChili()
+        public CustomizeCowpokeChili()//test
         {
             InitializeComponent();
         }
