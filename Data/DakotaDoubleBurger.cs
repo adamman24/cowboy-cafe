@@ -31,45 +31,141 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool ketchup = true;
         /// <summary>
         /// if dakota double has ketchup
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get
+            {
+                return ketchup;
+            }
+            set
+            {
+                ketchup = value;
+                NotifyOfPropertyChange("Ketchup");
+            }
+        }
 
+        public bool mustard = true;
         /// <summary>
         /// if dakota double has mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get
+            {
+                return mustard;
+            }
+            set
+            {
+                mustard = value;
+                NotifyOfPropertyChange("Mustard");
+            }
+        }
 
+        public bool pickle = true;
         /// <summary>
         /// if dakota double has pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get
+            {
+                return pickle;
+            }
+            set
+            {
+                pickle = value;
+                NotifyOfPropertyChange("Pickle");
+            }
+        }
 
+        public bool cheese = true;
         /// <summary>
         /// if dakota double has cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get
+            {
+                return cheese;
+            }
+            set
+            {
+                cheese = value;
+                NotifyOfPropertyChange("Cheese");
+            }
+        }
 
+        public bool bun = true;
         /// <summary>
         /// if dakota double has bun
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get
+            {
+                return bun;
+            }
+            set
+            {
+                bun = value;
+                NotifyOfPropertyChange("Bun");
+            }
+        }
 
+        public bool tomato = true;
         /// <summary>
         /// if dakota double has tomato
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get
+            {
+                return tomato;
+            }
+            set
+            {
+                tomato = value;
+                NotifyOfPropertyChange("Tomato");
+            }
+        }
 
+        public bool lettuce = true;
         /// <summary>
         /// if dakota double has lettuce
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce
+        {
+            get
+            {
+                return lettuce;
+            }
+            set
+            {
+                lettuce = value;
+                NotifyOfPropertyChange("Lettuce");
+            }
+        }
 
+        public bool mayo = true;
         /// <summary>
         /// if dakota double has mayo
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo
+        {
+            get
+            {
+                return mayo;
+            }
+            set
+            {
+                mayo = value;
+                NotifyOfPropertyChange("Mayo");
+            }
+        }
 
         /// <summary>
         /// Special instructions for the preparation of the dakota double

@@ -31,27 +31,92 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool ketchup = true;
         /// <summary>
-        /// if burger has ketchup
+        /// if dakota double has ketchup
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get
+            {
+                return ketchup;
+            }
+            set
+            {
+                ketchup = value;
+                NotifyOfPropertyChange("Ketchup");
+            }
+        }
 
+        public bool mustard = true;
         /// <summary>
-        /// if burger has mustard
+        /// if dakota double has mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get
+            {
+                return mustard;
+            }
+            set
+            {
+                mustard = value;
+                NotifyOfPropertyChange("Mustard");
+            }
+        }
 
+        public bool pickle = true;
         /// <summary>
-        /// if burger has pickle
+        /// if dakota double has pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get
+            {
+                return pickle;
+            }
+            set
+            {
+                pickle = value;
+                NotifyOfPropertyChange("Pickle");
+            }
+        }
 
+        public bool cheese = true;
         /// <summary>
-        /// if burger has cheese
+        /// if dakota double has cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get
+            {
+                return cheese;
+            }
+            set
+            {
+                cheese = value;
+                NotifyOfPropertyChange("Cheese");
+            }
+        }
 
-        public bool Bun { get; set; } = true;
+        public bool bun = true;
+        /// <summary>
+        /// if dakota double has bun
+        /// </summary>
+        public bool Bun
+        {
+            get
+            {
+                return bun;
+            }
+            set
+            {
+                bun = value;
+                NotifyOfPropertyChange("Bun");
+            }
+        }
+
+        
 
         /// <summary>
         /// Special instructions for the preparation of the trailburger

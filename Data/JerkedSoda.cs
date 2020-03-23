@@ -34,13 +34,22 @@ namespace CowboyCafe.Data
         /// <summary>
         /// what flavor the soda is
         /// </summary>
-        public SodaFlavor Flavor;
+        private SodaFlavor flavor;
+        public SodaFlavor Flavor
+        {
+            get => flavor;
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChange("Flavor");
+            }
+        }
 
 
         /// <summary>
         /// if has ice
         /// </summary>
-        public bool Ice { get; set; } = true;
+        //public bool Ice { get; set; } = true;
 
         /// <summary>
         /// calories for different size drinks

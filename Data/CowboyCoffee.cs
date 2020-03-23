@@ -52,16 +52,33 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool roomForCream = false;
         /// <summary>
         /// holds if there is room for cream in coffee
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                NotifyOfPropertyChange("RoomForCream");
+            }
+        }
 
-
+        public bool decaf = false;
         /// <summary>
         /// if the coffee should be decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChange("Decaf");
+            }
+        }
 
         
 

@@ -52,9 +52,18 @@ namespace CowboyCafe.Data
             }
         }
 
-        public bool Ice { get; set; } = true;
+        //public bool Ice { get; set; } = true;
 
-        public bool Lemon { get; set; } = false;
+        public bool lemon = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                NotifyOfPropertyChange("Lemon");
+            }
+        }
 
         /// <summary>
         /// return list of special instructions

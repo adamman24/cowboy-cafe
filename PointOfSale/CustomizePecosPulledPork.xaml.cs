@@ -14,15 +14,13 @@ using System.Windows.Shapes;
 namespace CowboyCafe.PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CustomizeCowpokeChili.xaml
+    /// Interaction logic for CustomizePecosPulledPork.xaml
     /// </summary>
-    public partial class CustomizeCowpokeChili : UserControl
+    public partial class CustomizePecosPulledPork : UserControl
     {
-        public CustomizeCowpokeChili()//test
+        public CustomizePecosPulledPork()
         {
             InitializeComponent();
         }
     }
-
-    
 }

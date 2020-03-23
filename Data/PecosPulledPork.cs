@@ -31,15 +31,39 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool bread = true;
         /// <summary>
         /// if pulled pork has bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread
+        {
+            get
+            {
+                return bread;
+            }
+            set
+            {
+                bread = value;
+                NotifyOfPropertyChange("Bread");
+            }
+        }
 
+        public bool pickle = true;
         /// <summary>
         /// if pulled pork has pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get
+            {
+                return pickle;
+            }
+            set
+            {
+                pickle = value;
+                NotifyOfPropertyChange("Pickle");
+            }
+        }
 
         /// <summary>
         /// Special instructions for the preparation of the pecos pulled pork

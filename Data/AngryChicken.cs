@@ -44,13 +44,27 @@ namespace CowboyCafe.Data
             set
             {
                 pickle = value;
+                NotifyOfPropertyChange("Pickle");
             }
         }
 
+        public bool bread = true;
         /// <summary>
         /// if angry chicken should have bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread
+        {
+            get
+            {
+                return bread;
+            }
+
+            set
+            {
+                bread = value;
+                NotifyOfPropertyChange("Bread");
+            }
+        }
 
         /// <summary>
         /// Special instructions for the preparation of the angry chicken

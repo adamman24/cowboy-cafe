@@ -68,20 +68,41 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool lemon = false;
         /// <summary>
         /// if lemon in tea
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get
+            {
+                return lemon;
+            }
+            set
+            {
+                lemon = value;
+                NotifyOfPropertyChange("Lemon");
+            }
+        }
 
+        public bool sweet = true;
         /// <summary>
         /// if tea should be sweet
         /// </summary>
-        public bool Sweet { get; set; } = true;
+        public bool Sweet
+        {
+            get { return sweet; }
+            set
+            {
+                sweet = value;
+                NotifyOfPropertyChange("Sweet");
+            }
+        }
 
         /// <summary>
         /// if has ice
         /// </summary>
-        public bool Ice { get; set; } = true;
+        //public bool Ice { get; set; } = true;
 
         /// <summary>
         /// return list of special instructions

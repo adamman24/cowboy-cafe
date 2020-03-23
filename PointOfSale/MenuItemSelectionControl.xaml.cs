@@ -99,11 +99,15 @@ namespace CowboyCafe.PointOfSale
                             //orderControl.SwapScreen(screen);
                             break;
                         case "AngryChicken":
-                            order.Add(new AngryChicken());
+                            var chicken = new AngryChicken();
+                            var chickenScreen = new CustomizeAngryChicken();
+                            AddItemAndOpenCustomizationScreen(chicken, chickenScreen);
 
                             break;
                         case "DakotaDouble":
-                            order.Add(new DakotaDoubleBurger());
+                            var dakota = new DakotaDoubleBurger();
+                            var dakotaScreen = new CustomizeDakotaDouble();
+                            AddItemAndOpenCustomizationScreen(dakota, dakotaScreen);
 
                             break;
                         case "RustlersRibs":
@@ -111,47 +115,69 @@ namespace CowboyCafe.PointOfSale
 
                             break;
                         case "TexasTriple":
-                            order.Add(new TexasTripleBurger());
+                            var texas = new TexasTripleBurger();
+                            var texasScreen = new CustomizeTexasTriple();
+                            AddItemAndOpenCustomizationScreen(texas, texasScreen);
 
                             break;
                         case "PecosPulledPork":
-                            order.Add(new PecosPulledPork());
+                            var pork = new PecosPulledPork();
+                            var porkScreen = new CustomizePecosPulledPork();
+                            AddItemAndOpenCustomizationScreen(pork, porkScreen);
 
                             break;
                         case "TrailBurger":
-                            order.Add(new TrailBurger());
+                            var trail = new TrailBurger();
+                            var trailScreen = new CustomizeTrailBurger();
+                            AddItemAndOpenCustomizationScreen(trail, trailScreen);
 
                             break;
                         case "ChiliCheeseFries":
-                            order.Add(new ChiliCheeseFries());
+                            var fries = new ChiliCheeseFries();
+                            var friesScreen = new CustomizeSide();
+                            AddItemAndOpenCustomizationScreen(fries, friesScreen);
 
                             break;
                         case "PanDeCampo":
-                            order.Add(new PanDeCampo());
+                            var panDeCampo = new PanDeCampo();
+                            var panDeCampoScreen = new CustomizeSide();
+                            AddItemAndOpenCustomizationScreen(panDeCampo, panDeCampoScreen);
 
                             break;
                         case "BakedBeans":
-                            order.Add(new BakedBeans());
+                            var beans = new BakedBeans();
+                            var beansScreen = new CustomizeSide();
+                            AddItemAndOpenCustomizationScreen(beans, beansScreen);
 
                             break;
                         case "CornDodgers":
-                            order.Add(new CornDodgers());
+                            var dodgers = new CornDodgers();
+                            var dodgersScreen = new CustomizeSide();
+                            AddItemAndOpenCustomizationScreen(dodgers, dodgersScreen);
 
                             break;
                         case "Water":
-                            order.Add(new Water());
+                            var water = new Water();
+                            var waterScreen = new CustomizeWater();
+                            AddItemAndOpenCustomizationScreen(water, waterScreen);
 
                             break;
                         case "CowboyCoffee":
-                            order.Add(new CowboyCoffee());
+                            var coffee = new CowboyCoffee();
+                            var coffeeScreen = new CustomizeCowboyCoffee();
+                            AddItemAndOpenCustomizationScreen(coffee, coffeeScreen);
 
                             break;
                         case "TexasTea":
-                            order.Add(new TexasTea());
+                            var tea = new TexasTea();
+                            var teaScreen = new CustomizeTexasTea();
+                            AddItemAndOpenCustomizationScreen(tea, teaScreen);
 
                             break;
                         case "JerkedSoda":
-                            order.Add(new JerkedSoda());
+                            var soda = new JerkedSoda();
+                            var sodaScreen = new CustomizeJerkedSoda();
+                            AddItemAndOpenCustomizationScreen(soda, sodaScreen);
 
                             break;
                         default:

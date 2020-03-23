@@ -31,55 +31,175 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool ketchup = true;
         /// <summary>
-        /// if texas triple has ketchup
+        /// if dakota double has ketchup
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get
+            {
+                return ketchup;
+            }
+            set
+            {
+                ketchup = value;
+                NotifyOfPropertyChange("Ketchup");
+            }
+        }
 
+        public bool mustard = true;
         /// <summary>
-        /// if texas triple has mustard
+        /// if dakota double has mustard
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get
+            {
+                return mustard;
+            }
+            set
+            {
+                mustard = value;
+                NotifyOfPropertyChange("Mustard");
+            }
+        }
 
+        public bool pickle = true;
         /// <summary>
-        /// if texas triple has pickle
+        /// if dakota double has pickle
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get
+            {
+                return pickle;
+            }
+            set
+            {
+                pickle = value;
+                NotifyOfPropertyChange("Pickle");
+            }
+        }
 
+        public bool cheese = true;
         /// <summary>
-        /// if texas triple has cheese
+        /// if dakota double has cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get
+            {
+                return cheese;
+            }
+            set
+            {
+                cheese = value;
+                NotifyOfPropertyChange("Cheese");
+            }
+        }
 
+        public bool bun = true;
         /// <summary>
-        /// if texas triple has bun
+        /// if dakota double has bun
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get
+            {
+                return bun;
+            }
+            set
+            {
+                bun = value;
+                NotifyOfPropertyChange("Bun");
+            }
+        }
 
+        public bool tomato = true;
         /// <summary>
-        /// if texas triple has tomato
+        /// if dakota double has tomato
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get
+            {
+                return tomato;
+            }
+            set
+            {
+                tomato = value;
+                NotifyOfPropertyChange("Tomato");
+            }
+        }
 
+        public bool lettuce = true;
         /// <summary>
-        /// if texas triple has lettuce
+        /// if dakota double has lettuce
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce
+        {
+            get
+            {
+                return lettuce;
+            }
+            set
+            {
+                lettuce = value;
+                NotifyOfPropertyChange("Lettuce");
+            }
+        }
 
+        public bool mayo = true;
         /// <summary>
-        /// if texas triple has mayo
+        /// if dakota double has mayo
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo
+        {
+            get
+            {
+                return mayo;
+            }
+            set
+            {
+                mayo = value;
+                NotifyOfPropertyChange("Mayo");
+            }
+        }
 
+        public bool bacon = true;
         /// <summary>
         /// if texas triple has bacon
         /// </summary>
-        public bool Bacon { get; set; } = true;
+        public bool Bacon
+        {
+            get
+            {
+                return bacon;
+            }
+            set
+            {
+                bacon = value;
+                NotifyOfPropertyChange("Bacon");
+            }
+        }
 
+        public bool egg = true;
         /// <summary>
         /// if texas triple has egg
         /// </summary>
-        public bool Egg { get; set; } = true;
+        public bool Egg
+        {
+            get
+            {
+                return egg;
+            }
+            set
+            {
+                egg = value;
+                NotifyOfPropertyChange("Egg");
+            }
+        }
 
         /// <summary>
         /// Special instructions for the preparation of the texas triple
