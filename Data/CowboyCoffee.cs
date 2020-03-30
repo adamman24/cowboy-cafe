@@ -66,6 +66,17 @@ namespace CowboyCafe.Data
             }
         }
 
+        public bool ice = false;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChange("Ice");
+            }
+        }
+
         public bool decaf = false;
         /// <summary>
         /// if the coffee should be decaf

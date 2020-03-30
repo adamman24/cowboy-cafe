@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CowboyCafe.PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="200">
+             d:DesignHeight="450" d:DesignWidth="320">
     <UserControl.Resources>
         <Style TargetType="ListBoxItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -13,7 +13,7 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="280"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -26,13 +26,14 @@
             <TextBlock TextAlignment="Left" FontSize="15">Order#</TextBlock>
             <TextBlock Text="{Binding Path=OrderNumber}" FontSize="15"></TextBlock>
         </StackPanel>
-        <ListBox Name="orderView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Path=Items}">
+        <ListBox Name="orderView" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Path=Items}" SelectionChanged="OnItemClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="20"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -41,6 +42,7 @@
                         <TextBlock Text="{Binding}"/>
                         <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1"/>
                         <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Button VerticalAlignment="Top" Background="Red" Grid.Column="2" Click="OnRemoveItem">x</Button>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

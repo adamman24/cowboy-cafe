@@ -18,9 +18,11 @@
             <StackPanel Orientation="Horizontal">
                 <CheckBox IsChecked="{Binding Path=Ketchup}">Ketchup</CheckBox>
                 <CheckBox IsChecked="{Binding Path=Mustard}">Mustard</CheckBox>
+                <CheckBox IsChecked="{Binding Path=Bun}">Bun</CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
                 <CheckBox IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
                 <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
-                <CheckBox IsChecked="{Binding Path=Bun}">Bun</CheckBox>
             </StackPanel>
         </StackPanel>
     </Grid>
