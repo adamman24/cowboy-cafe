@@ -58,10 +58,7 @@ namespace CowboyCafe.PointOfSale
         
         void onCancelOrderButtonClicked(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<OrderControl>();
-            var screen = new OrderSummaryControl();
-            orderControl.SwapScreen(screen);
-            this.DataContext = new OrderControl();
+            SwapScreenOrderControl();
         }
 
         private void SwapScreenOrderControl()
