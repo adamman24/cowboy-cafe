@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="CowboyCafe.PointOfSale.TransactionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CowboyCafe.PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="320"/>
+        </Grid.ColumnDefinitions>
+
+        <Border x:Name="Container" Grid.Column="1">
+            <local:OrderSummaryControl></local:OrderSummaryControl>
+        </Border>
+
+        <Border Name="TransactionMethod" Grid.Column="0">
+            <StackPanel>
+                <Button Name="PayWithCashButton" FontSize="50" Height="120">Pay with Cash</Button>
+                <Button Name="PayWithCardButton" FontSize="50" Height="120">Pay With Card</Button>
+                <Button Name="CancelOrderButton" FontSize="50" Height="120" Background="Red">Cancel Order</Button>
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+</UserControl>

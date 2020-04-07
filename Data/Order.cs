@@ -25,11 +25,34 @@ namespace CowboyCafe.Data
         /// </summary>
         public uint OrderNumber { get { return number++; } }
 
-        private double subtotal = 0;
         /// <summary>
         /// creates a sub total price of order
         /// </summary>
-        public double Subtotal { get { return subtotal; } private set { subtotal = value; }  }
+        public double Subtotal 
+        { 
+            get 
+            {
+                double total = 0;
+                foreach(IOrderItem item in Items)
+                {
+                    total += item.Price;
+                }
+                return total;
+            }  
+        }
+
+        /// <summary>
+        /// gets total price with 16% sales tax and returns
+        /// </summary>
+        public double total
+        {
+            get
+            {
+                double totalPrice = 0;
+                totalPrice = Math.Round(((Subtotal * .16) + Subtotal) * 100f) / 100;
+                return totalPrice;
+            }
+        }
 
         
         /// <summary>
