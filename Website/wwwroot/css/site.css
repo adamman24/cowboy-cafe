@@ -76,13 +76,27 @@ body {
 
 /*******columns stuff********/
 
-.clearfix {
-    clear: both;
+@media (orientation: landscape) {
+    h1 {
+        color: black;
+    }
 }
+
+@media (orientation: portrait) {
+    h1 {
+        color: red;
+    }
+}
+
+
  
 .float-columns > div{
     float: left;
     width: 25%;
+}
+
+.clearfix {
+    clear: both;
 }
 
 @media (max-width: 490px) {
