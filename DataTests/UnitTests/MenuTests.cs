@@ -102,10 +102,10 @@ namespace CowboyCafe.DataTests.UnitTests
         public void SearchingFunctionWorksAsExpected(string search)
         {
             
-            Assert.True(searchTest(search));
+            //Assert.True(searchTest(search));
         }
 
-        public bool searchTest (string s)
+        /*public bool searchTest (string s)
         {
             bool exists = false;
 
@@ -146,6 +146,7 @@ namespace CowboyCafe.DataTests.UnitTests
                 }
             }
         }
+        
 
         [Theory]
         [InlineData(500, 100)]
@@ -183,7 +184,7 @@ namespace CowboyCafe.DataTests.UnitTests
             }
         }
 
-
+        */
 
         [Theory]
         [InlineData("Entree", "Sides", "Drinks")]

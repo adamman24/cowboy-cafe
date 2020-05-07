@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace CowboyCafe.Data
 {
@@ -49,14 +50,23 @@ namespace CowboyCafe.Data
             {
                 List<IOrderItem> sides = new List<IOrderItem>();
 
-                var beans = new BakedBeans();
-                sides.Add(beans);
-                var fries = new ChiliCheeseFries();
-                sides.Add(fries);
-                var dodgers = new CornDodgers();
-                sides.Add(dodgers);
-                var campo = new PanDeCampo();
-                sides.Add(campo);
+                foreach (Size size in Enum.GetValues(typeof(Size)))
+                {
+                    var beans = new BakedBeans();
+                    var fries = new ChiliCheeseFries();
+                    var dodgers = new CornDodgers();
+                    var campo = new PanDeCampo();
+
+                    beans.Size = size;
+                    fries.Size = size;
+                    dodgers.Size = size;
+                    campo.Size = size;
+
+                    sides.Add(beans);
+                    sides.Add(fries);
+                    sides.Add(dodgers);
+                    sides.Add(campo);
+                }
 
                 return sides;
             }
@@ -72,14 +82,22 @@ namespace CowboyCafe.Data
             {
                 List<IOrderItem> drinks = new List<IOrderItem>();
 
-                var coffee = new CowboyCoffee();
-                drinks.Add(coffee);
-                var soda = new JerkedSoda();
-                drinks.Add(soda);
-                var tea = new TexasTea();
-                drinks.Add(tea);
-                var water = new Water();
-                drinks.Add(water);
+                foreach (Size size in Enum.GetValues(typeof(Size)))
+                {
+                    var coffee = new CowboyCoffee();
+                    coffee.Size = size;
+                    drinks.Add(coffee);
+                    var soda = new JerkedSoda();
+                    soda.Size = size;
+                    drinks.Add(soda);
+                    var tea = new TexasTea();
+                    tea.Size = size;
+                    drinks.Add(tea);
+                    var water = new Water();
+                    water.Size = size;
+                    drinks.Add(water);
+                }
+                    
 
                 return drinks;
             }
@@ -133,7 +151,7 @@ namespace CowboyCafe.Data
         /// <param name="itemList">the items</param>
         /// <param name="term">string input</param>
         /// <returns></returns>
-        public static IEnumerable<IOrderItem> SearchMenu(IEnumerable<IOrderItem> itemList, string term)
+        /*public static IEnumerable<IOrderItem> SearchMenu(IEnumerable<IOrderItem> itemList, string term)
         {
             List<IOrderItem> result = new List<IOrderItem>();
             
@@ -153,27 +171,51 @@ namespace CowboyCafe.Data
 
             return result;
         }
+        */
 
         public static IEnumerable<IOrderItem> CategoryFilter(IEnumerable<IOrderItem> itemList, IEnumerable<string> category)
         {
             if (category == null || category.Count() == 0) return itemList;
 
-            List<IOrderItem> result = new List<IOrderItem>();
-            
-            foreach(IOrderItem item in itemList)
+            var result = itemList;
+           
+            if (category.Contains("Entree"))
             {
-                if (item != null && item is Entree && category.Contains("Entree"))
-                {
-                    result.Add(item);
-                }
-                if (item != null && item is Side && category.Contains("Sides"))
-                {
-                    result.Add(item);
-                }
-                if (item != null && item is Drink && category.Contains("Drinks"))
-                {
-                    result.Add(item);
-                }
+                var item = itemList.OfType<Entree>();
+                result = item;
+            }
+            if (category.Contains("Sides"))
+            {
+                var item = itemList.OfType<Side>();
+                result = item;
+            }
+            if (category.Contains("Drinks"))
+            {
+                var item = itemList.OfType<Drink>();
+                result = item;
+            }
+
+            if (category.Contains("Entree") && category.Contains("Side"))
+            {
+                result = itemList.Where(item => category.Contains("Entree") && (item is Entree || item is Side)).Where(item => category.Contains("Side") &&
+                    (item is Side || item is Entree));
+            }
+
+            if (category.Contains("Entree") && category.Contains("Drink"))
+            {
+                result = itemList.Where(item => category.Contains("Entree") && (item is Entree || item is Drink)).Where(item => category.Contains("Drink") &&
+                    (item is Drink || item is Entree));
+            }
+
+            if (category.Contains("Side") && category.Contains("Drink"))
+            {
+                result = itemList.Where(item => category.Contains("Side") && (item is Side || item is Drink)).Where(item => category.Contains("Drink") &&
+                    (item is Drink  || item is Side));
+            }
+
+            if (category.Contains("Entree") && category.Contains("Side") && category.Contains("Drink"))
+            {
+                result = itemList.Where(item => category.Contains("Entree")).Where(item => category.Contains("Side")).Where(item => category.Contains("Drink"));
             }
 
             return result;
@@ -186,6 +228,7 @@ namespace CowboyCafe.Data
         /// <param name="max"></param>
         /// <param name="min"></param>
         /// <returns></returns>
+        /*
         public static IEnumerable<IOrderItem> CalorieFilter (IEnumerable<IOrderItem> itemList, int? max, int? min)
         {
             var result = new List<IOrderItem>();
@@ -237,6 +280,7 @@ namespace CowboyCafe.Data
             }
             return result;
         }
+        */
 
         /// <summary>
         /// allows filtering price
@@ -245,6 +289,7 @@ namespace CowboyCafe.Data
         /// <param name="max"></param>
         /// <param name="min"></param>
         /// <returns></returns>
+        /*
         public static IEnumerable<IOrderItem> PriceFilter(IEnumerable<IOrderItem> itemList, double? max, double? min)
         {
             var result = new List<IOrderItem>();
@@ -289,6 +334,7 @@ namespace CowboyCafe.Data
             }
             return result;
         }
+        */
 
 
     }
